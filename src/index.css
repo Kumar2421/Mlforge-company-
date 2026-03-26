@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0a0a0a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #858585;
+  --font-inter: "Inter", sans-serif;
+  --font-geist: "Geist", sans-serif;
+  
+  /* Exact Figma Hero Heading Styles */
+  --font-size-hero: 51.8px;
+  --line-height-hero: 1.08;
+  --letter-spacing-hero: -0.0324em;
+}
+
+:root {
+  background-color: var(--color-brand-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter);
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-brand-bg);
+  color: var(--color-text-primary);
+}
+
+.selection\:bg-white\/20::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+}

@@ -1,0 +1,308 @@
+/* ML FORGE - Premium Documentation Portal Design System */
+
+:root {
+    --docs-bg: #000000;
+    --docs-sidebar-bg: #000000;
+    --docs-border: rgba(255, 255, 255, 0.08);
+    --docs-border-hover: rgba(255, 255, 255, 0.15);
+    --docs-text-primary: #ffffff;
+    --docs-text-secondary: #8a8a8a;
+    --docs-text-muted: #666666;
+    --docs-accent: #ffffff;
+    --docs-accent-subtle: rgba(255, 255, 255, 0.05);
+    --docs-card-bg: #111111;
+    --docs-font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+    --docs-font-mono: 'Geist Mono', 'JetBrains Mono', monospace;
+    --docs-sidebar-width: 280px;
+    --docs-header-height: 80px;
+}
+
+.docsTheme {
+    background-color: var(--docs-bg);
+    color: var(--docs-text-primary);
+    min-height: 100vh;
+    font-family: var(--docs-font-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout --- */
+
+.docsWrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+.docsSidebar {
+    width: var(--docs-sidebar-width);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid var(--docs-border);
+    padding: 120px 24px 40px;
+    overflow-y: auto;
+    background: var(--docs-sidebar-bg);
+}
+
+.docsMain {
+    flex: 1;
+    padding: 120px 80px 100px;
+    min-width: 0;
+}
+
+/* --- Sidebar Typography --- */
+
+.docsSidebar__group {
+    margin-bottom: 32px;
+}
+
+.docsSidebar__groupTitle {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--docs-text-muted);
+    margin-bottom: 12px;
+    padding-left: 12px;
+}
+
+.docsSidebar__link {
+    display: block;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--docs-text-secondary);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.docsSidebar__link:hover {
+    color: var(--docs-text-primary);
+    background: var(--docs-accent-subtle);
+}
+
+.docsSidebar__link--active {
+    color: var(--docs-text-primary);
+    background: var(--docs-accent-subtle);
+    font-weight: 500;
+}
+
+/* --- Index Hero (Landing) --- */
+
+.docsIndexHero {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+.docsIndexHero__content {
+    flex: 1;
+}
+
+.docsIndexHero__visual {
+    flex: 1;
+    position: relative;
+}
+
+.docsIndexHero__image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    filter: invert(1) opacity(0.85);
+    mix-blend-mode: screen;
+}
+
+.docsIndexHero__title {
+    font-size: 56px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.docsIndexHero__subtitle {
+    font-size: 18px;
+    color: var(--docs-text-secondary);
+    line-height: 1.6;
+    max-width: 480px;
+    margin-bottom: 40px;
+}
+
+.docsSearchContainer {
+    position: relative;
+    max-width: 440px;
+}
+
+.docsSearch__input {
+    width: 100%;
+    background: #111111;
+    border: 1px solid var(--docs-border);
+    border-radius: 8px;
+    padding: 14px 16px 14px 44px;
+    color: #fff;
+    font-size: 15px;
+    transition: border-color 0.2s;
+}
+
+.docsSearch__input:focus {
+    border-color: var(--docs-text-muted);
+    outline: none;
+}
+
+.docsSearch__icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--docs-text-muted);
+    pointer-events: none;
+}
+
+/* --- Topic Grid --- */
+
+.docsTopicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 80px;
+}
+
+.docsTopicCard {
+    padding: 32px;
+    background: #0a0a0a;
+    border: 1px solid var(--docs-border);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.docsTopicCard:hover {
+    border-color: var(--docs-border-hover);
+    background: #111111;
+    transform: translateY(-2px);
+}
+
+.docsTopicCard__header {
+    margin-bottom: 20px;
+}
+
+.docsTopicCard__kicker {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--docs-text-muted);
+    margin-bottom: 12px;
+}
+
+.docsTopicCard__title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.docsTopicCard__body {
+    font-size: 14px;
+    color: var(--docs-text-secondary);
+    line-height: 1.6;
+}
+
+/* --- Article Styles --- */
+
+.docsArticle {
+    max-width: 800px;
+}
+
+.docsArticle__header {
+    margin-bottom: 60px;
+}
+
+.docsArticle__crumb {
+    font-size: 14px;
+    color: var(--docs-text-muted);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.docsArticle__title {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+}
+
+.docsArticle__lede {
+    font-size: 20px;
+    color: var(--docs-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.docsArticle__section {
+    margin-bottom: 80px;
+}
+
+.docsH2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--docs-text-primary);
+}
+
+.docsP {
+    font-size: 16px;
+    color: var(--docs-text-secondary);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* --- Inline Image / Visual --- */
+
+.docsInsetImage {
+    width: 100%;
+    background: #111111;
+    border: 1px solid var(--docs-border);
+    border-radius: 12px;
+    margin: 32px 0;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.docsInsetImage img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- Utilities --- */
+
+.docsMetaDot {
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background: var(--docs-text-muted);
+    border-radius: 50%;
+}
+
+@media (max-width: 1024px) {
+    .docsSidebar {
+        display: none;
+    }
+    .docsMain {
+        padding: 100px 24px 80px;
+    }
+    .docsIndexHero {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .docsIndexHero__title {
+        font-size: 40px;
+    }
+}
