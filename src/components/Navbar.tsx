@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import logo from '../assets/icon.png';
 
 const Navbar = () => {
   const navLinks = [
@@ -15,7 +16,7 @@ const Navbar = () => {
       <div className="w-full max-w-[1920px] mx-auto px-20 grid grid-cols-3 items-center">
         {/* Left: Logo */}
         <Link to="/" className="flex items-center space-x-4 pl-4 justify-start hover:opacity-80 transition-opacity">
-          <img src="/src/assets/icon.png" alt="Exact Logo" className="w-6 h-6 object-contain" />
+          <img src={logo} alt="Exact Logo" className="w-6 h-6 object-contain" />
           <span 
             className="text-white font-inter font-extrabold" 
             style={{ fontSize: '20px', letterSpacing: '-0.05em' }}
@@ -23,6 +24,7 @@ const Navbar = () => {
             ml forge
           </span>
         </Link>
+
 
 
         {/* Center: Nav links */}
