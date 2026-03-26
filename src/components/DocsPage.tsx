@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import '../App.css'
 import './DocsPage.css'
+import { Helmet } from 'react-helmet-async'
 import Navbar from './Navbar'
+
 
 // Assets - Premium Tech Visuals
 import heroVector from '../assets/globe.png'
@@ -222,7 +224,12 @@ function DocsPage() {
 
     return (
         <div className="docsTheme">
+            <Helmet>
+                <title>{isIndex ? 'Registry | ml forge Documentation' : `${(currentPage || fallbackPage).title} | ml forge Docs`}</title>
+                <meta name="description" content={isIndex ? 'The unified documentation for ml forge Vision AI IDE. Build, audit, and ship workflows with deterministic precision.' : (currentPage || fallbackPage).lede} />
+            </Helmet>
             <Navbar />
+
             
             <div className="docsWrapper">
                 {!isIndex && (

@@ -17,13 +17,20 @@ import SignupPage from './components/SignupPage';
 import ForgotPasswordPage from './components/ForgotPasswordPage';
 import ResetPasswordPage from './components/ResetPasswordPage';
 import OTPVerificationPage from './components/OTPVerificationPage';
+import { Helmet } from 'react-helmet-async';
 import DocsPage from './components/DocsPage';
+
 import LandingPageV2 from './v2/LandingPage';
 
 
 const Home = () => (
   <main className="min-h-screen bg-black text-white relative font-inter overflow-x-hidden">
+    <Helmet>
+      <title>ml forge | Build, Audit, and Ship Mission-Critical Vision Systems</title>
+      <meta name="description" content="Ship ML with confidence. The high-performance vision IDE for building, serving, and scaling machine learning models with deterministic precision." />
+    </Helmet>
     <Navbar />
+
     <Header />
     <Social />
     <Features />
@@ -43,9 +50,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/download" element={<DownloadPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/download" element={<><Helmet><title>Download ml forge Desktop</title></Helmet><DownloadPage /></>} />
+        <Route path="/login" element={<><Helmet><title>Log In | ml forge</title></Helmet><LoginPage /></>} />
+        <Route path="/signup" element={<><Helmet><title>Create Account | ml forge</title></Helmet><SignupPage /></>} />
+
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/otp-verification" element={<OTPVerificationPage />} />
