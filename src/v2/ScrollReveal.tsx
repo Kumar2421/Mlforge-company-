@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React, { type ReactNode } from 'react';
+
 import { motion, useReducedMotion } from 'framer-motion';
 
 interface ScrollRevealProps {

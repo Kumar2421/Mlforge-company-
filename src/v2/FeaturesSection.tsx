@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from './Button';
 import { ArrowUpRight } from 'lucide-react';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const FeaturesSection: React.FC = () => {
