@@ -7,7 +7,7 @@ const HeroCTAs = () => {
         to="/download"
         className="h-11 px-8 rounded-[12px] bg-white text-[#0F0F0F] text-[16px] font-inter font-semibold flex items-center justify-center transition-all hover:bg-[#F2F2F2] hover:scale-105 active:scale-95"
       >
-        Download for macOS
+        Download
       </Link>
       <Link
         to="/docs"
